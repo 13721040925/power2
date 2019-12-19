@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mapper.CooperateMapper"> 
+ 
+ 	<select id="getAllPageJiqi" resultType="cooperate">
+ 		<!-- SELECT max(id) id,cooperate_name,`state` FROM  cooperate GROUP BY cooperate_name HAVING count(*) >= 1 -->
+ 		select * from cooperate where id in(select max(id) from cooperate GROUP BY cooperate_name)
+ 		<if test="cooperate_name!=''"> 
+            and cooperate_name=#{cooperate_name}  
+        </if>
+        <if test="state!=''">
+        	and `state`=#{state}
+        </if>  
+        limit #{rowNum},#{pagecount}
+ 	</select>
+ 	
+ 	<select id="getListLogByCooperate_name" resultType="cooperate">
+ 		select * from Cooperate where 1=1
+ 		<if test="cooperate_name!=''">
+            and cooperate_name=#{cooperate_name}  
+        </if>
+ 	</select>
+ 	
+ 	<!-- 查看控制器的id 集合  去重 -->
+ 	<select id="getListLogByCooperate_names" resultType="cooperate">
+ 		<!-- select max(id) id,cooperate_name,`state` from cooperate group by cooperate_name having count(*) >= 1 -->
+ 		select * from cooperate where id in(select max(id) from cooperate GROUP BY cooperate_name)
+ 		<if test="cooperate_name!=''">
+            and cooperate_name=#{cooperate_name}  
+        </if>
+        <if test="state!=''">
+        	and `state`=#{state}
+        </if>
+ 	</select>
+ </mapper>

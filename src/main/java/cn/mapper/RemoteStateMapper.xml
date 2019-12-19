@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mapper.RemoteStateMapper">
+    <update id="updateRemoteState" parameterType="RemoteState">
+		update  remotestate 
+		<set>
+			<if test="group1xianliu!=null">
+				group1xianliu =#{group1xianliu},
+			</if>
+			<if test="group1inpower!=null">
+				group1inpower =#{group1inpower},
+			</if>
+			<if test="group1outpower!=null">
+				group1outpower =#{group1outpower},
+			</if>
+			<if test="group1inorder!=null">
+				group1inorder =#{group1inorder},
+			</if>
+			<if test="group1outorder!=null">
+				group1outorder =#{group1outorder},
+			</if>
+			<if test="group2xianliu!=null">
+				group2xianliu =#{group2xianliu},
+			</if>
+			<if test="group2inpower!=null">
+				group2inpower =#{group2inpower},
+			</if>
+			<if test="group2outpower!=null">
+				group2outpower =#{group2outpower},
+			</if>
+			<if test="group2inorder!=null">
+				group2inorder =#{group2inorder},
+			</if>
+			<if test="group2outorder!=null">
+				group2outorder =#{group2outorder},
+			</if>
+			<if test="group3xianliu!=null">
+				group3xianliu =#{group3xianliu},
+			</if>
+			<if test="group3inpower!=null">
+				group3inpower =#{group3inpower},
+			</if>
+			<if test="group3outpower!=null">
+				group3outpower =#{group3outpower},
+			</if>
+			<if test="group3inorder!=null">
+				group3inorder =#{group3inorder},
+			</if>
+			<if test="group3outorder!=null">
+				group3outorder =#{group3outorder},
+			</if>
+			<if test="group4xianliu!=null">
+				group4xianliu =#{group4xianliu},
+			</if>
+			<if test="group4inpower!=null">
+				group4inpower =#{group4inpower},
+			</if>
+			<if test="group4outpower!=null">
+				group4outpower =#{group4outpower},
+			</if>
+			<if test="group4inorder!=null">
+				group4inorder =#{group4inorder},
+			</if>
+			<if test="group4outorder!=null">
+				group4outorder =#{group4outorder},
+			</if>
+			<if test="group5xianliu!=null">
+				group5xianliu =#{group5xianliu},
+			</if>
+			<if test="group5inpower!=null">
+				group5inpower =#{group5inpower},
+			</if>
+			<if test="group5outpower!=null">
+				group5outpower =#{group5outpower},
+			</if>
+			<if test="group5inorder!=null">
+				group5inorder =#{group5inorder},
+			</if>
+			<if test="group5outorder!=null">
+				group5outorder =#{group5outorder},
+			</if>
+			<if test="group6xianliu!=null">
+				group6xianliu =#{group6xianliu},
+			</if>
+			<if test="group6inpower!=null">
+				group6inpower =#{group6inpower},
+			</if>
+			<if test="group6outpower!=null">
+				group6outpower =#{group6outpower},
+			</if>
+			<if test="group6inorder!=null">
+				group6inorder =#{group6inorder},
+			</if>
+			<if test="group6outorder!=null">
+				group6outorder =#{group6outorder},
+			</if>
+			<if test="inoutmodel!=null">
+				inoutmodel =#{inoutmodel}
+			</if>
+		</set>
+		where cooperate_ip = #{cooperate_ip}
+	</update>
+</mapper>

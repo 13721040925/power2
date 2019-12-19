@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mapper.WarnlogMapper"> 
+ 
+ 	<select id="getPageAllWarnlog" resultType="warnlog">
+ 		select * from warnlog where  (prostatus not in (0) or warnstatus not in (0) or otherstatus not in (0))
+ 		<if test="ip!=''"> 
+            and ip=#{ip}  
+        </if> 
+        ORDER BY id desc limit #{rowNum},#{pagecount}
+ 	</select>
+ 	
+ 	<select id="getPageAllWarnlogCount" resultType="int">
+ 		select count(id) from warnlog where  (prostatus not in (0) or warnstatus not in (0) or otherstatus not in (0))
+ 		<if test="ip!=''"> 
+            and ip=#{ip}  
+        </if> 
+ 	</select>
+</mapper>
